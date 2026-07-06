@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PinActivity">
+
+    <!-- 🔥 FONDO GRADIENTE -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/pin_background"/>
+
+    <!-- 🔒 ICONO -->
+    <ImageView
+        android:id="@+id/lock_icon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_lock"
+        app:tint="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- TEXTO PRINCIPAL -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingresa tu PIN"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/lock_icon"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- SUBTEXTO -->
+    <TextView
+        android:id="@+id/subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingresa el código de seguridad"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:alpha="0.8"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- CIRCULOS PIN -->
+    <LinearLayout
+        android:id="@+id/pin_dots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/subtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <View
+            android:id="@+id/dot1"
+            style="@style/pinDot"/>
+
+        <View
+            android:id="@+id/dot2"
+            style="@style/pinDot"/>
+
+        <View
+            android:id="@+id/dot3"
+            style="@style/pinDot"/>
+
+        <View
+            android:id="@+id/dot4"
+            style="@style/pinDot"/>
+
+    </LinearLayout>
+
+    <!-- TECLADO -->
+    <GridLayout
+        android:id="@+id/keypad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="4"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@id/pin_dots"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- FILA 1 -->
+        <Button android:id="@+id/btn1"  style="@style/pinButton"  android:text="1"/>
+        <Button android:id="@+id/btn2" style="@style/pinButton" android:text="2"/>
+        <Button android:id="@+id/btn3" style="@style/pinButton" android:text="3"/>
+
+        <!-- FILA 2 -->
+        <Button android:id="@+id/btn4" style="@style/pinButton" android:text="4"/>
+        <Button android:id="@+id/btn5" style="@style/pinButton" android:text="5"/>
+        <Button android:id="@+id/btn6" style="@style/pinButton" android:text="6"/>
+
+        <!-- FILA 3 -->
+        <Button android:id="@+id/btn7" style="@style/pinButton" android:text="7"/>
+        <Button android:id="@+id/btn8" style="@style/pinButton" android:text="8"/>
+        <Button android:id="@+id/btn9" style="@style/pinButton" android:text="9"/>
+
+        <!-- FILA 4 -->
+        <View android:layout_width="80dp" android:layout_height="80dp"/>
+        <Button android:id="@+id/btn0" style="@style/pinButton" android:text="0"/>
+        <ImageButton
+            android:id="@+id/btnDelete"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_backspace"
+            android:background="@android:color/transparent"
+            app:tint="@android:color/white"/>
+    </GridLayout>
+
+    <!-- OLVIDE PIN -->
+    <TextView
+        android:id="@+id/forgot_pin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OLVIDÉ MI PIN"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

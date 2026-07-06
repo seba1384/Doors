@@ -5,5 +5,24 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
+
+    <!-- 🔥 TUS ESTILOS -->
+    <style name="pinButton">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">80dp</item>
+        <item name="android:layout_margin">12dp</item>
+        <item name="android:background">@drawable/pin_button_bg</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="pinDot">
+        <item name="android:layout_width">12dp</item>
+        <item name="android:layout_height">12dp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:background">@drawable/pin_dot_bg</item>
+    </style>
+
+
     <style name="Theme.Doors" parent="Base.Theme.Doors" />
 </resources>

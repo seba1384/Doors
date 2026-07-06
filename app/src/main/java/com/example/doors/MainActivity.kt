@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         // probar el resto de la app mientras se termina el login.
         val loginButton = findViewById<android.widget.Button>(R.id.login_btn)
         loginButton.setOnClickListener {
-            startActivity(Intent(this, HomeActivity::class.java))
+            startActivity(Intent(this, PinActivity::class.java))
             finish()
         }
     }
