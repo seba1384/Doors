@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Degradado diagonal de la marca: morado vibrante arriba -> fondo oscuro abajo -->
+    <gradient
+        android:type="linear"
+        android:angle="135"
+        android:startColor="@color/brand_purple_soft"
+        android:centerColor="#150A38"
+        android:endColor="@color/bg_deep" />
+
+</shape>

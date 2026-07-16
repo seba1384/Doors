@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "382388528402",
+    "project_id": "doors-74170",
+    "storage_bucket": "doors-74170.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:382388528402:android:56f762cd56d1ad6f1d3fcb",
+        "android_client_info": {
+          "package_name": "com.example.doors"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArh-YTaJpy5rQyPSqIhRxY9H10PX-0uTc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

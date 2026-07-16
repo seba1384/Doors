@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PinActivity">
+
+    <!-- Fondo con degradado de marca -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/pin_background" />
+
+    <!-- Logo de la app -->
+    <FrameLayout
+        android:id="@+id/logo_container"
+        android:layout_width="76dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/bg_icon_circle_translucent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher_round"
+            android:contentDescription="DOOR'S" />
+    </FrameLayout>
+
+    <!-- ICONO CANDADO -->
+    <ImageView
+        android:id="@+id/lock_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="14dp"
+        android:src="@drawable/ic_lock_closed"
+        app:layout_constraintTop_toBottomOf="@id/logo_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- TEXTO PRINCIPAL -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="Ingresa tu PIN"
+        android:textColor="@android:color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/lock_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- SUBTEXTO -->
+    <TextView
+        android:id="@+id/subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:alpha="0.85"
+        android:text="Ingresa el código de seguridad para continuar"
+        android:textColor="@android:color/white"
+        android:textSize="13.5sp"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- CIRCULOS PIN -->
+    <LinearLayout
+        android:id="@+id/pin_dots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/subtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <View android:id="@+id/dot1" style="@style/pinDot" />
+        <View android:id="@+id/dot2" style="@style/pinDot" />
+        <View android:id="@+id/dot3" style="@style/pinDot" />
+        <View android:id="@+id/dot4" style="@style/pinDot" />
+    </LinearLayout>
+
+    <!-- MENSAJE DE ERROR -->
+    <TextView
+        android:id="@+id/tvPinScreenError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="PIN incorrecto. Inténtalo de nuevo."
+        android:textColor="#FFB3B3"
+        android:textSize="12.5sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@id/pin_dots"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- TECLADO -->
+    <GridLayout
+        android:id="@+id/keypad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:columnCount="3"
+        android:rowCount="4"
+        app:layout_constraintTop_toBottomOf="@id/tvPinScreenError"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- FILA 1 -->
+        <Button android:id="@+id/btn1" style="@style/pinButton" android:text="1" />
+        <Button android:id="@+id/btn2" style="@style/pinButton" android:text="2" />
+        <Button android:id="@+id/btn3" style="@style/pinButton" android:text="3" />
+
+        <!-- FILA 2 -->
+        <Button android:id="@+id/btn4" style="@style/pinButton" android:text="4" />
+        <Button android:id="@+id/btn5" style="@style/pinButton" android:text="5" />
+        <Button android:id="@+id/btn6" style="@style/pinButton" android:text="6" />
+
+        <!-- FILA 3 -->
+        <Button android:id="@+id/btn7" style="@style/pinButton" android:text="7" />
+        <Button android:id="@+id/btn8" style="@style/pinButton" android:text="8" />
+        <Button android:id="@+id/btn9" style="@style/pinButton" android:text="9" />
+
+        <!-- FILA 4 -->
+        <View android:layout_width="76dp" android:layout_height="76dp" android:layout_margin="10dp" />
+        <Button android:id="@+id/btn0" style="@style/pinButton" android:text="0" />
+        <ImageButton
+            android:id="@+id/btnDelete"
+            android:layout_width="76dp"
+            android:layout_height="76dp"
+            android:layout_margin="10dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="Borrar"
+            android:padding="24dp"
+            android:src="@drawable/ic_backspace" />
+    </GridLayout>
+
+    <!-- OLVIDE PIN -->
+    <TextView
+        android:id="@+id/forgot_pin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="20dp"
+        android:background="?attr/selectableItemBackground"
+        android:padding="10dp"
+        android:text="OLVIDÉ MI PIN"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/keypad"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
